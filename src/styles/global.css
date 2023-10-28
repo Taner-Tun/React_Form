@@ -20,4 +20,5 @@ body{
     align-items:center;
     justify-content: center; 
     line-height: 1.25;
+    color: var(--marine-blue);
 }
