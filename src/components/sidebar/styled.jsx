@@ -30,5 +30,13 @@ export const ItemNumber = styled.span`
   justify-content: center;
 `
 export const ItemBody = styled.div``
-export const Subtitle = styled.h5``
-export const Title = styled.h2``
+
+export const Subtitle = styled.h5`
+   font-size: 13px;
+   text-transform: uppercase;
+   opacity: 0.75;
+`
+export const Title = styled.h2`
+   text-transform: uppercase;
+   font-weight: 500;
+`
