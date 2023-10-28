@@ -1,7 +1,7 @@
 [*] Add Reset and Global CSS
 [*] Make the Container
 [*] MultiSteps Component
-[] Sidebar Component
+[*] Sidebar Component
 [] Step Component
 [] Step1 Component
 [] Step2 Component
