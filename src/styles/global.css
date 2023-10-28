@@ -15,4 +15,8 @@ body{
     font-family: 'Ubuntu', sans-serif;
     font-size: 16px;
     background-color: var(--magnolia);
+    height: 100vh;
+    display: flex;
+    align-items:center;
+    justify-content: center; 
 }
