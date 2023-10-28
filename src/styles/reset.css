@@ -12,6 +12,7 @@ button {
     background: none;
     font-family: inherit;
     font-size: inherit;
+	cursor: pointer;
 }
 a{
     text-decoration: none;

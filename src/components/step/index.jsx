@@ -2,7 +2,7 @@ import * as S from "./styled";
 
 function Step() {
   return (
-    <div>
+    
       <S.Step>
         <S.StepHeader>
           <S.Title>Title</S.Title>
@@ -16,7 +16,7 @@ function Step() {
           <S.GoNextButton>Next Step</S.GoNextButton>
         </S.StepFooter>
       </S.Step>
-    </div>
+    
   )
 }
 

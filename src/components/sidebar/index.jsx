@@ -1,5 +1,5 @@
 import * as S from './styled';
-import { Items } from './constant';
+import { Items } from './constants';
 
 
 function Sidebar() {
