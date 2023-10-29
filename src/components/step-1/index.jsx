@@ -1,8 +1,13 @@
-function Step1() {
+import Step from '../step';
+
+import * as S from "./styled";
+
+function Step1(props) {
   return (
-    <div>
-      Step1
-    </div>
+    <Step {...props}>
+     Step1
+    </Step>
+      
   )
 }
 

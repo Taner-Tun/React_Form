@@ -1,8 +1,10 @@
-function Step2() {
+import Step from "../step";
+
+function Step2(props) {
   return (
-    <div>
+    <Step {...props}>
       Step2
-    </div>
+    </Step>
   )
 }
 
