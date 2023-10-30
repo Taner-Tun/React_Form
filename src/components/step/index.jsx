@@ -1,6 +1,12 @@
 import * as S from "./styled";
 
-function Step({title, subtitle, hasBackButton, hasNextButton, children}){
+function Step({
+  title,
+  subtitle,
+  hasBackButton,
+  hasNextButton,
+  children,
+}){
   return (
       <S.Step>
         <S.StepHeader>
