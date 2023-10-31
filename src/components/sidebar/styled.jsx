@@ -31,15 +31,14 @@ export const Item = styled.div`
   align-items: center;
   gap: 8px;
 
-  ${ItemNumber} {
-  ${({ isActive }) => isActive && css`
+  ${ItemNumber}{
+  ${({ active }) => active === 'true' && css`
     background-color: var(--magnolia);
     color: var(--marine-blue);
     border-color: var(--magnolia);
   `}
   }
 `;
-
 
 export const ItemBody = styled.div``
 

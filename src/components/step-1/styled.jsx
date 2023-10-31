@@ -33,8 +33,8 @@ export const FormItem= styled.div`
     position: relative;
 
     ${Input} {
-        ${({ hasError }) =>
-          hasError &&
+        ${({ haserror }) =>
+          haserror === 'true' &&
           css`
             border-color: var(--strawberry-red);
           `}
