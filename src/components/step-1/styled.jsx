@@ -12,7 +12,7 @@ export const Input= styled.input`
    font-size: 16px;
    border: 1px solid var(--light-gray);
    border-radius: 8px;
-   color: var(--marin-blue);
+   color: var(--marine-blue);
    font-weight: 500;
    transition: border-color 200ms ease;
 

@@ -1,14 +1,15 @@
 import * as S from './styled';
 import { Items } from './constants';
+import PropTypes from 'prop-types';
 
 
 
 
-function Sidebar({isActive}) {
+function Sidebar({activeStep}) {
   return (
     <S.Sidebar>
       {Items.map((item) => (
-        <S.Item key={item.id} isActive = {isActive=== item.id}>
+        <S.Item key={item.id} isActive={activeStep === item.id}>
         <S.ItemNumber>{item.number}</S.ItemNumber>
         <S.ItemBody>
           <S.Subtitle>{item.subtitle}</S.Subtitle>
@@ -20,5 +21,7 @@ function Sidebar({isActive}) {
   );
   }
 
-
+  Sidebar.propTypes = {
+    activeStep: PropTypes.string.isRequired, 
+  };
 export default Sidebar;

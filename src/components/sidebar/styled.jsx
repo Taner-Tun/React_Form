@@ -32,13 +32,11 @@ export const Item = styled.div`
   gap: 8px;
 
   ${ItemNumber} {
-    ${({ isActive }) =>
-      isActive &&
-      css`
-        background-color: var(--magnolia);
-        color: var(--marine-blue);
-        border-color: var(--magnolia);
-      `}
+  ${({ isActive }) => isActive && css`
+    background-color: var(--magnolia);
+    color: var(--marine-blue);
+    border-color: var(--magnolia);
+  `}
   }
 `;
 
@@ -54,3 +52,4 @@ export const Title = styled.h2`
    text-transform: uppercase;
    font-weight: 500;
 `;
+
