@@ -1,40 +1,54 @@
+import  { useState } from "react";
 import Step from "../step";
 import formJSON from "../../../form.json";
 
-import ArcadeIcon from "../../assets/icon-arcade.svg";
-import AdvancedIcon from "../../assets/icon-advanced.svg";
-import ProIcon from "../../assets/icon-pro.svg";
 import * as S from "./styled";
 
-// I work with js runtime, no backend, i cant get src url, this is a solution
-
-const Icons = {
-  1:ArcadeIcon,
-  2:AdvancedIcon,
-  3:ProIcon,
-}
+import{
+  Icons,
+  DEFAULT_PLAN,
+  DEFAULT_BILLING_TYPE,
+  MONTHLY,
+  YEARLY,
+} from './constants';
 
 const { step2 } = formJSON;
 
 function Step2(props) {
-  const billingType = 'monthly';
+  const [plan, setPlan] = useState(DEFAULT_PLAN);
+  const [billingType, setBillingType] = useState(DEFAULT_BILLING_TYPE);
+
+  const changePlan = (newPlan) => {
+    setPlan(newPlan);
+  };
+
+  const changeBillingType = (newBillingType) => {
+    setBillingType(newBillingType);
+  }
 
   return (
     <Step {...props}>
       <S.Step2>
-         <S.RadioGroup> {
-              step2[billingType].map(item => 
-                <S.RadioLabel key= {item.id}>
-                <S.RadioInput name="plan-type" type="radio" />
+         <S.RadioGroup> 
+              {step2[billingType].map(item => (
+                <S.RadioLabel key= {item.id} isselected = {item.id === plan}>
+                <S.RadioInput name="plan-type" type="radio" onChange={() => changePlan(item.id)} />
                 <S.Icon src={Icons[item.id]} />
                 <S.Title>{item.title}</S.Title>
                 <S.Subtitle>{item.price}</S.Subtitle>
+                {billingType === YEARLY && (
+                <S.Description>{item.description}</S.Description>
+                )}
               </S.RadioLabel>
-              )
-            }</S.RadioGroup>
+              ))}
+            </S.RadioGroup>
+            <S.BillingGroup>
+              <S.BillingButton type="button" onClick={() => changeBillingType(MONTHLY)} isselected={billingType === MONTHLY}>Monthly</S.BillingButton>
+              <S.BillingButton type="button" onClick={() => changeBillingType(YEARLY)} isselected={billingType === YEARLY}>Yearly</S.BillingButton>
+            </S.BillingGroup>
       </S.Step2>
     </Step>
-  );
+  ); 
 }
 
 export default Step2;
