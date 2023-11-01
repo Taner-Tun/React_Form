@@ -1,4 +1,5 @@
 import * as S from "./styled";
+import PropTypes from 'prop-types';
 
 function Step({
   title,
@@ -24,4 +25,11 @@ function Step({
   );
 }
 
+Step.propTypes = {
+  title: PropTypes.string.isRequired, 
+  subtitle: PropTypes.string.isRequired, 
+  hasBackButton: PropTypes.bool, 
+  hasNextButton: PropTypes.bool.isRequired, 
+  children: PropTypes.node, 
+};
 export default Step;
