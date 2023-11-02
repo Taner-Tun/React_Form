@@ -8,8 +8,8 @@ import PropTypes from 'prop-types';
 function Sidebar({activeStep}) {
   return (
     <S.Sidebar>
-      {Items.map((item) => (
-        <S.Item key={item.id} active={activeStep === 'step1' ? 'true' : 'false'}>
+      {Items.map((item, index) => (
+        <S.Item key={item.id}  active={activeStep === `step${index + 1}` ? 'true' : 'false'}>
         <S.ItemNumber>{item.number}</S.ItemNumber>
         <S.ItemBody>
           <S.Subtitle>{item.subtitle}</S.Subtitle>
