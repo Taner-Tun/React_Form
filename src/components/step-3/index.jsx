@@ -5,12 +5,18 @@ import * as S from "./styled";
 
 
 
-const { step3 } = FormJSON;
 
-function Step3(props) {
+
+function Step3({onStepSubmit, formData, ...props}) {
+  const { step3 } = FormJSON;
   const [selectedAddons, setSelectedAddons] = useState([]);
 
-  const BillingType = "monthly";
+  // const  BillingType  = formData.step2 ? formData.step2.billingType : "monthly";
+
+  const BillingType =
+  formData.step2 && formData.step2.billingType: "monthly";
+    
+    
 
   const changeSelectedAddons = (checked, selectedAddon) => {
     if (checked) {
@@ -24,8 +30,14 @@ function Step3(props) {
   console.log(selectedAddons);
   
   const checkSelected = (id) => selectedAddons.some((i) => i.id === id);
+
+  const onSubmit = () => {
+    onStepSubmit('step3', 'step4', {
+      selectedAddons,
+    });
+  };
   return (
-    <Step {...props}>
+    <Step {...props} handleSubmit={onSubmit}>
       <S.Step3>
         {step3[BillingType].map(item =>
           <S.Item key={item.id} isselected={checkSelected(item.id)}>

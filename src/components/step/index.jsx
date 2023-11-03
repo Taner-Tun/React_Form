@@ -2,6 +2,7 @@ import * as S from "./styled";
 import PropTypes from 'prop-types';
 
 function Step({
+  handleSubmit, 
   title,
   subtitle,
   hasBackButton,
@@ -9,7 +10,7 @@ function Step({
   children,
 }){
   return (
-      <S.Step>
+      <S.Step onSubmit = {handleSubmit}>
         <S.StepHeader>
           <S.Title>{title}</S.Title>
           <S.Subtitle>{subtitle}</S.Subtitle>
@@ -19,7 +20,7 @@ function Step({
         </S.Body>
         <S.StepFooter>
          {hasBackButton && <S.GoBackButton>Go Back</S.GoBackButton>}
-         {hasNextButton && <S.GoNextButton>Go Next Step</S.GoNextButton>}
+         {hasNextButton && <S.GoNextButton type="submit">Go Next Step</S.GoNextButton>}
         </S.StepFooter>
       </S.Step>
   );
