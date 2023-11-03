@@ -4,17 +4,14 @@ import FormJSON from "../../../form.json";
 import * as S from "./styled";
 
 
-
-
-
 function Step3({onStepSubmit, formData, ...props}) {
   const { step3 } = FormJSON;
   const [selectedAddons, setSelectedAddons] = useState([]);
 
   // const  BillingType  = formData.step2 ? formData.step2.billingType : "monthly";
 
-  const BillingType =
-  formData.step2 && formData.step2.billingType: "monthly";
+  const BillingType = formData.step2 && formData.step2.billingType ? formData.step2.billingType : "monthly";
+
     
     
 
