@@ -27,6 +27,7 @@ function Step({
 }
 
 Step.propTypes = {
+  handleSubmit: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired, 
   subtitle: PropTypes.string.isRequired, 
   hasBackButton: PropTypes.bool, 

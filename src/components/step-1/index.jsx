@@ -2,6 +2,7 @@ import Step from '../step';
 import FormsJSON from "../../../form.json";
 
 import * as S from "./styled";
+import PropTypes from 'prop-types';
 
 function Step1({onStepSubmit, ...props}) {
   const {step1} = FormsJSON;
@@ -36,5 +37,7 @@ function Step1({onStepSubmit, ...props}) {
   );
 }
 
-        
+Step1.propTypes = {
+  onStepSubmit: PropTypes.func.isRequired,
+};
 export default Step1;

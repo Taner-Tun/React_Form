@@ -2,6 +2,7 @@ import { useState } from "react"
 import Step from "../step";
 import FormJSON from "../../../form.json";
 import * as S from "./styled";
+import PropTypes from 'prop-types';
 
 
 function Step3({onStepSubmit, formData, ...props}) {
@@ -51,5 +52,12 @@ function Step3({onStepSubmit, formData, ...props}) {
     </Step>
   )
 }
+
+Step3.propTypes = {
+  onStepSubmit: PropTypes.func.isRequired,
+  formData: PropTypes.object.isRequired, 
+  step2: PropTypes.object.isRequired,
+  billingType: PropTypes.string.isRequired,
+};
 
 export default Step3;

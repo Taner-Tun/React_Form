@@ -3,6 +3,7 @@ import Step from "../step";
 import formJSON from "../../../form.json";
 
 import * as S from "./styled";
+import PropTypes from 'prop-types';
 
 import{
   Icons,
@@ -61,4 +62,8 @@ function Step2({onStepSubmit, ...props}) {
   ); 
 }
 
+
+Step2.propTypes = {
+  onStepSubmit: PropTypes.func.isRequired,
+};
 export default Step2;
