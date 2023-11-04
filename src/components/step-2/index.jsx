@@ -15,9 +15,9 @@ import{
 
 const { step2 } = formJSON;
 
-function Step2({onStepSubmit, ...props}) {
-  const [plan, setPlan] = useState(DEFAULT_PLAN);
-  const [billingType, setBillingType] = useState(DEFAULT_BILLING_TYPE);
+function Step2({onStepSubmit, formData, ...props}) {
+  const [plan, setPlan] = useState(formData.step2?.plan ?? DEFAULT_PLAN);
+  const [billingType, setBillingType] = useState(formData.step2?.billingType ?? DEFAULT_BILLING_TYPE);
 
   const changePlan = (newPlan) => {
     setPlan(newPlan);
@@ -65,5 +65,6 @@ function Step2({onStepSubmit, ...props}) {
 
 Step2.propTypes = {
   onStepSubmit: PropTypes.func.isRequired,
+  formData: PropTypes.obj.isRequired,
 };
 export default Step2;

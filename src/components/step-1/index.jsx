@@ -4,7 +4,7 @@ import FormsJSON from "../../../form.json";
 import * as S from "./styled";
 import PropTypes from 'prop-types';
 
-function Step1({onStepSubmit, ...props}) {
+function Step1({onStepSubmit, formData, ...props}) {
   const {step1} = FormsJSON;
   const haserror = false;
 
@@ -26,7 +26,13 @@ function Step1({onStepSubmit, ...props}) {
       {step1.map((item)=>(
           <S.FormItem key = {item.id} haserror ={haserror ? 'true' : 'false'}>
           <S.Label htmlFor={item.id}>{item.label}</S.Label>
-          <S.Input id={item.id} name={item.id} type={item.type} placeholder={item.placeholder} value={item.input} />
+          <S.Input
+           defaultValue={formData.step1[item.id]}
+           id={item.id} 
+           name={item.id}
+           type={item.type}
+           placeholder={item.placeholder}
+           value={item.input} />
           {haserror && (
           <S.ErrorMessage>This field is required</S.ErrorMessage>
           )}
@@ -39,5 +45,6 @@ function Step1({onStepSubmit, ...props}) {
 
 Step1.propTypes = {
   onStepSubmit: PropTypes.func.isRequired,
+  formData: PropTypes.object.isRequired,
 };
 export default Step1;
