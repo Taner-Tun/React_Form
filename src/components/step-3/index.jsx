@@ -36,7 +36,10 @@ function Step3({onStepSubmit, formData, ...props}) {
       <S.Step3>
         {step3[BillingType].map(item =>
           <S.Item key={item.id} isselected={checkSelected(item.id)}>
-          <S.Input type="checkbox" onChange={(e) => changeSelectedAddons(e.target.checked, item)}/>
+          <S.Input
+           defaultChecked={checkSelected(item.id)}
+           type="checkbox"
+           onChange={(e) => changeSelectedAddons(e.target.checked, item)}/>
           <S.InputBody>
             <S.Title>{item.title}</S.Title>
             <S.Subtitle>{item.description}</S.Subtitle>
