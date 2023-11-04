@@ -53,8 +53,6 @@ function Step3({onStepSubmit, formData, ...props}) {
 Step3.propTypes = {
   onStepSubmit: PropTypes.func.isRequired,
   formData: PropTypes.object.isRequired, 
-  step2: PropTypes.object.isRequired,
-  billingType: PropTypes.string.isRequired,
 };
 
 export default Step3;
