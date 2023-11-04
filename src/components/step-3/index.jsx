@@ -2,6 +2,7 @@ import { useState } from "react"
 import Step from "../step";
 import FormJSON from "../../../form.json";
 import * as S from "./styled";
+
 import PropTypes from 'prop-types';
 
 
@@ -9,12 +10,8 @@ function Step3({onStepSubmit, formData, ...props}) {
   const { step3 } = FormJSON;
   const [selectedAddons, setSelectedAddons] = useState([]);
 
-  // const  BillingType  = formData.step2 ? formData.step2.billingType : "monthly";
 
-  const BillingType = formData.step2 && formData.step2.billingType ? formData.step2.billingType : "monthly";
-
-    
-    
+   const BillingType = formData.step2 && formData.step2.billingType ? formData.step2.billingType : "monthly";
 
   const changeSelectedAddons = (checked, selectedAddon) => {
     if (checked) {
@@ -61,3 +58,4 @@ Step3.propTypes = {
 };
 
 export default Step3;
+
