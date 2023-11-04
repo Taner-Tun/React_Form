@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 
 function Step3({onStepSubmit, formData, ...props}) {
   const { step3 } = FormJSON;
-  const [selectedAddons, setSelectedAddons] = useState([]);
+  const [selectedAddons, setSelectedAddons] = useState(formData.step3.selectedAddons??[]);
 
 
    const BillingType = formData.step2 && formData.step2.billingType ? formData.step2.billingType : "monthly";
