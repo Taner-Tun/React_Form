@@ -6,6 +6,17 @@ import PropTypes from 'prop-types';
 function Step4({formData, ...props}) {
   const { billingType, plan } = formData.step2;
   const { selectedAddons } = formData.step3;
+  const totalAmount = selectedAddons.reduce(
+    (acc, curr) => {
+      console.log('Addon:', curr);
+      console.log('Accumulator:', acc);
+      return acc + curr.priceAmount;
+    },
+    plan.priceAmount
+  );
+  console.log('Total Amount:', totalAmount);
+  
+
   return (
     <Step {...props}>
       <S.Step4>
@@ -28,14 +39,20 @@ function Step4({formData, ...props}) {
             <S.Title>
               Total(per {billingType})
             </S.Title>
-            <S.TotalAmount>
+            {/* <S.TotalAmount>
               +$
               {selectedAddons.reduce(
               (acc,curr) => acc + curr.priceAmount,
                plan.priceAmount
                )}
                /{billingType === 'monthly' ? 'mo' : 'yr'}
-            </S.TotalAmount>
+            </S.TotalAmount> */}
+            <S.TotalAmount>
+  +$
+  {selectedAddons.reduce((acc, curr) => acc + curr.priceAmount, plan.priceAmount)}
+  /{billingType === 'monthly' ? 'mo' : 'yr'}
+</S.TotalAmount>
+
           </S.TotalRow>
       </S.Step4>
     </Step>
